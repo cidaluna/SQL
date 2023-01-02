@@ -1,7 +1,6 @@
 
 --
 -- 1. Select the names of all the products in the store. 
-
 SELECT NAME
 FROM
     PRODUCTS
@@ -19,4 +18,12 @@ FROM
     PRODUCTS
 WHERE
     PRICE <= 200
+;
+
+--4. Select all the products with a price between $60 and $120. 
+SELECT *
+FROM
+    PRODUCTS
+WHERE
+    PRICE BETWEEN 60 AND 120
 ;
