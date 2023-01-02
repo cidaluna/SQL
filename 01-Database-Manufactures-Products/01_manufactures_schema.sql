@@ -1,5 +1,5 @@
 -- DATABASE https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
+-- Oracle SQL Developes version 20.2.0
 -- CRIANDO TABELAS - COMANDOS DDL - DATA MANIPULATION LANGUAGE
 CREATE TABLE MANUFACTURERS(
     MCODE INTEGER NOT NULL,
