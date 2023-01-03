@@ -12,3 +12,6 @@
 -- 10. Select all the data from the products, including all the data for each product's manufacturer. 
 -- 11. Select the product name, price, and manufacturer name of all the products. 
 -- 12. Select the average price of each manufacturer's products, showing only the manufacturer's code. 
+-- 13. Select the average price of each manufacturer's products, showing the manufacturer's name. 
+-- 14. Select the names of manufacturer whose products have an average price larger than or equal to $150. 
+-- 

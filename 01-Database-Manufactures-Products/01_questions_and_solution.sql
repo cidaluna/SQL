@@ -94,3 +94,57 @@ ON P.MANUFACTURER = M.MCODE
 ;
 
 -- 12. Select the average price of each manufacturer's products, showing only the manufacturer's code. 
+SELECT AVG(PRICE), MANUFACTURER
+FROM
+    PRODUCTS
+GROUP BY MANUFACTURER
+;
+
+-- 13. Select the average price of each manufacturer's products, showing the manufacturer's name. 
+-- WITH INNER JOIN
+SELECT AVG(P.PRICE), M.NAME
+FROM
+    PRODUCTS P
+INNER JOIN
+    MANUFACTURERS M 
+ON
+    P.MANUFACTURER = M.MCODE
+GROUP BY M.NAME
+;
+
+-- WITHOUT INNER JOIN
+SELECT AVG(P.PRICE), M.NAME
+FROM
+    PRODUCTS P, MANUFACTURERS M 
+WHERE
+    P.MANUFACTURER = M.MCODE
+GROUP BY M.NAME
+;
+
+-- 14. Select the names of manufacturer whose products have an average price larger than or equal to $150. 
+SELECT M.NAME, AVG(P.PRICE)
+FROM
+    MANUFACTURERS M
+INNER JOIN
+    PRODUCTS P 
+ON
+    M.MCODE = P.MANUFACTURER
+GROUP BY M.NAME
+HAVING AVG(P.PRICE) >= 150
+;
+
+-- 15. Select the name and price of the cheapest product. 
+SELECT NAME, MIN(PRICE)  -- VERIFY
+FROM
+    PRODUCTS
+;
+
+-- WITH A NESTED SELECT (SELECT ANINHADO)
+-- IF THERE IS MORE THAN ONE ITEM WITH THE CHEAPEST PRICE IT WILL SELECT THEM BOTH.
+SELECT NAME, PRICE
+FROM
+    PRODUCTS
+WHERE PRICE = (SELECT MIN(PRICE) FROM PRODUCTS)
+;
+
+-- 
