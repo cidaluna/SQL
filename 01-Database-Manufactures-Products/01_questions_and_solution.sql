@@ -49,3 +49,48 @@ WHERE
 ;
 
 -- 8. Compute the number of products with a price larger than or equal to $180. 
+SELECT COUNT(PCODE)
+FROM
+    PRODUCTS
+WHERE
+    PRICE >= 180
+;
+
+-- 9. Select the name and price of all products with a price larger than or equal to $180, and 
+-- sort first by price (in descending order), and then by name (in ascending order).
+SELECT NAME, PRICE
+FROM
+    PRODUCTS
+WHERE 
+    PRICE >= 180
+ORDER BY 2 DESC, 1 ASC
+;
+
+-- 10. Select all the data from the products, including all the data for each product's manufacturer. 
+-- WITH LEFT JOIN
+SELECT *
+FROM
+    PRODUCTS P
+LEFT JOIN
+    MANUFACTURERS M
+ON P.MANUFACTURER = M.MCODE
+;
+
+-- WITHOUT LEFT JOIN
+SELECT *
+FROM
+    PRODUCTS P, MANUFACTURERS M
+WHERE 
+    P.MANUFACTURER = M.MCODE
+;
+
+-- 11. Select the product name, price, and manufacturer name of all the products. 
+SELECT P.NAME, P.PRICE, M.NAME
+FROM
+    PRODUCTS P
+INNER JOIN
+    MANUFACTURERS M
+ON P.MANUFACTURER = M.MCODE
+;
+
+-- 12. Select the average price of each manufacturer's products, showing only the manufacturer's code. 

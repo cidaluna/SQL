@@ -7,3 +7,8 @@
 -- 6. Compute the average price of all the products. 
 -- 7. Compute the average price of all products with manufacturer code equal to 2. 
 -- 8. Compute the number of products with a price larger than or equal to $180. 
+-- 9. Select the name and price of all products with a price larger than or equal to $180, 
+-- and sort first by price (in descending order), and then by name (in ascending order).
+-- 10. Select all the data from the products, including all the data for each product's manufacturer. 
+-- 11. Select the product name, price, and manufacturer name of all the products. 
+-- 12. Select the average price of each manufacturer's products, showing only the manufacturer's code. 
