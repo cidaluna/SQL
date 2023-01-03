@@ -14,4 +14,6 @@
 -- 12. Select the average price of each manufacturer's products, showing only the manufacturer's code. 
 -- 13. Select the average price of each manufacturer's products, showing the manufacturer's name. 
 -- 14. Select the names of manufacturer whose products have an average price larger than or equal to $150. 
+-- 15. Select the name and price of the cheapest product. 
+-- 16. Select the name of each manufacturer along with the name and price of its most expensive product.
 -- 
