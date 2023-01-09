@@ -167,3 +167,17 @@ AND P.PRICE = (SELECT MAX(P.PRICE) FROM PRODUCTS P WHERE P.MANUFACTURER = M.MCOD
 ;
 
 
+-- 17. Select the name of each manufacturer which have an average price above $145 and contain at least 2 different products. 
+
+
+
+-- 18. Add a new product: Loudspeakers, $70, manufacturer 2. 
+
+
+-- 19. Update the name of product 8 to "Laser Printer". 
+
+
+-- 20. Apply a 10% discount to all products. 
+
+
+-- 21. Apply a 10% discount to all products with a price larger than or equal to $120. 
