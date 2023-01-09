@@ -168,7 +168,7 @@ AND P.PRICE = (SELECT MAX(P.PRICE) FROM PRODUCTS P WHERE P.MANUFACTURER = M.MCOD
 
 
 -- 17. Select the name of each manufacturer which have an average price above $145 and contain at least 2 different products. 
-SELECT M.NAME, AVG(P.PRICE), COUNT(P.CODE)
+SELECT M.NAME, AVG(P.PRICE), COUNT(P.PCODE)  -- TODO: TESTAR SEM PASSAR FUNÇÕES NO SELECT
 FROM
     MANUFACTURERS M
 INNER JOIN
@@ -176,13 +176,19 @@ INNER JOIN
 ON M.MCODE = P.MANUFACTURER
 HAVING AVG(P.PRICE) >= 145 
 AND
-COUNT(P.CODE) >= 2;
+COUNT(P.PCODE) >= 2;
 
 
 -- 18. Add a new product: Loudspeakers, $70, manufacturer 2. 
+INSERT INTO PRODUCTS
+VALUES (11, 'LOUDSPEAKERS',70.0, 2);  -- TODO: TESTAR CASAS DECIMAIS
 
 
 -- 19. Update the name of product 8 to "Laser Printer". 
+UPDATE PRODUCTS
+SET NAME = 'LASER PRINTER'
+WHERE PCODE = 8
+;
 
 
 -- 20. Apply a 10% discount to all products. 
