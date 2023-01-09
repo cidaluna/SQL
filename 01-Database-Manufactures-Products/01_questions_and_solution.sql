@@ -192,6 +192,13 @@ WHERE PCODE = 8
 
 
 -- 20. Apply a 10% discount to all products. 
+UPDATE PRODUCTS
+SET PRICE = PRICE - (PRICE * 0.10)   -- PAY ATENTION BECAUSE HERE YOU WILL MODIFY ALL PRODUCTS' PRICES.
+;
 
 
 -- 21. Apply a 10% discount to all products with a price larger than or equal to $120. 
+UPDATE PRODUCTS
+SET PRICE = PRICE - (PRICE * 0.10)
+WHERE PRICE >= 120
+;
