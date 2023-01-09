@@ -168,7 +168,7 @@ AND P.PRICE = (SELECT MAX(P.PRICE) FROM PRODUCTS P WHERE P.MANUFACTURER = M.MCOD
 
 
 -- 17. Select the name of each manufacturer which have an average price above $145 and contain at least 2 different products. 
-SELECT M.NAME
+SELECT M.NAME, AVG(P.PRICE), COUNT(P.CODE)
 FROM
     MANUFACTURERS M
 INNER JOIN
