@@ -49,3 +49,11 @@ SELECT DISTINCT CITY
 FROM STATION 
 WHERE MOD(ID,2)=0 
 ORDER BY CITY ASC;       -- TODO: TESTAR NO ORACLE O MOD;
+
+
+-- 10. Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). 
+-- If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically. 
+SELECT CITY, LENGTH(CITY)  -- NOME DA CIDADE, QTD CARACTERES DO NOME DA CIDAE
+FROM STATION
+ORDER BY LENGTH(CITY), CITY LIMIT 1;     -- ORDENA PELO QTD CARACTERES DO NOME DA CIDADE, ASC IMPLICITO, E LIMITE DE TUPLA 1
+
