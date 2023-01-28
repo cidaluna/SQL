@@ -1,4 +1,4 @@
--- PRACTICING BASIC SELECTS
+-- ORACLE DATABASE - PRACTICING BASIC SELECTS
 -- WebSite: https://www.hackerrank.com/challenges/weather-observation-station-5/problem?isFullScreen=true
 -- 1. Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA. 
 -- CITY TABLE:
@@ -65,8 +65,7 @@ CITY LIKE 'A%' OR
 CITY LIKE 'E%' OR
 CITY LIKE 'I%' OR
 CITY LIKE 'O%' OR
-CITY LIKE 'U%';  --TODO: VERIFICAR TINHA DADO ACERTO DEPOIS DEU ERRO, TESTAR NO ORACLE
-
+CITY LIKE 'U%'; 
 -- 12. Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
 SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u';
 
@@ -85,5 +84,8 @@ SELECT DISTINCT CITY FROM STATION WHERE CITY NOT LIKE 'A%' AND CITY NOT LIKE 'E%
 SELECT DISTINCT CITY FROM STATION WHERE CITY NOT LIKE '%a' AND CITY NOT LIKE '%e' AND CITY NOT LIKE '%i' AND CITY NOT LIKE '%o' AND CITY NOT LIKE '%u';
 
 -- 16. Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+SELECT DISTINCT CITY FROM STATION WHERE (CITY NOT LIKE 'A%' AND CITY NOT LIKE 'E%' AND CITY NOT LIKE 'I%' AND CITY NOT LIKE 'O%' AND CITY NOT LIKE 'U%') 
+OR (CITY NOT LIKE '%a' AND CITY NOT LIKE '%e' AND CITY NOT LIKE '%i' AND CITY NOT LIKE '%o' AND CITY NOT LIKE '%u'); 
+
 
 
