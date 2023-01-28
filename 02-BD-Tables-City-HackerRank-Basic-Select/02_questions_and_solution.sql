@@ -60,13 +60,19 @@ UNION
 SELECT * FROM (SELECT DISTINCT city, LENGTH(city) FROM station ORDER BY LENGTH(city) DESC, city ASC) WHERE ROWNUM = 1; 
 
 -- 11. Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
-SELECT
-DISTINCT CITY
-FROM STATION
-WHERE
+SELECT DISTINCT CITY FROM STATION WHERE
 CITY LIKE 'A%' OR
-CITY LIKE 'E%' OR 
-CITY LIKE 'I%' OR 
+CITY LIKE 'E%' OR
+CITY LIKE 'I%' OR
 CITY LIKE 'O%' OR
-CITY LIKE 'U%';  -- CONGRATULATIONS CIDA!
+CITY LIKE 'U%';  --TODO: VERIFICAR TINHA DADO ACERTO DEPOIS DEU ERRO, TESTAR NO ORACLE
+
+-- 12. Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+SELECT DISTINCT CITY FROM STATION WHERE CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u';
+
+-- 13. Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters.
+-- Your result cannot contain duplicates.
+
+
+
 
