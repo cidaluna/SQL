@@ -1,4 +1,5 @@
 -- PRACTICING BASIC SELECTS
+-- WebSite: https://www.hackerrank.com/challenges/weather-observation-station-5/problem?isFullScreen=true
 -- 1. Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA. 
 -- CITY TABLE:
 SELECT *
@@ -57,3 +58,15 @@ ORDER BY CITY ASC;       -- TODO: TESTAR NO ORACLE O MOD;
 SELECT * FROM (SELECT DISTINCT city, LENGTH(city) FROM station ORDER BY LENGTH(city) ASC, city ASC) WHERE ROWNUM = 1   
 UNION  
 SELECT * FROM (SELECT DISTINCT city, LENGTH(city) FROM station ORDER BY LENGTH(city) DESC, city ASC) WHERE ROWNUM = 1; 
+
+-- 11. Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+SELECT
+DISTINCT CITY
+FROM STATION
+WHERE
+CITY LIKE 'A%' OR
+CITY LIKE 'E%' OR 
+CITY LIKE 'I%' OR 
+CITY LIKE 'O%' OR
+CITY LIKE 'U%';  -- CONGRATULATIONS CIDA!
+
