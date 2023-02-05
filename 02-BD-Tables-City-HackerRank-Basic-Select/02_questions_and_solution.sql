@@ -111,3 +111,8 @@ SELECT NAME FROM EMPLOYEE WHERE SALARY > 2000 AND MONTHS < 10 ORDER BY EMPLOYEE_
 --    Isosceles: It's a triangle with 2 sides of equal length.
 --    Scalene: It's a triangle with 3 sides of differing lengths.
 --    Not A Triangle: The given values of A, B, and C don't form a triangle.
+SELECT CASE WHEN A THEN 'Isoceles'
+CASE WHEN A THEN 'Equilateral'
+CASE WHEN A THEN 'Scalene'
+CASE WHEN A THEN 'Not A Triangle'
+FROM TRIANGLES; 
