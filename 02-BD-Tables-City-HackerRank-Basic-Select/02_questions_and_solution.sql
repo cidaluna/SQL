@@ -110,8 +110,7 @@ SELECT NAME FROM EMPLOYEE WHERE SALARY > 2000 AND MONTHS < 10 ORDER BY EMPLOYEE_
 --    Isosceles: It's a triangle with 2 sides of equal length.
 --    Equilateral: It's a triangle with 3 sides of equal length.
 --    Scalene: It's a triangle with 3 sides of differing lengths. --WHEN (A != B AND B != C) THEN 'Scalene'
---    Not A Triangle: The given values of A, B, and C don't form a triangle.
-SELECT (CASE WHEN (A=B AND A!=C AND B!=C) THEN 'Isoceles' WHEN (A=B AND A=C AND B=C) THEN 'Equilateral'
-WHEN ( A!=B AND (B>A OR A>B) AND (A+B)>C) THEN 'Scalene' ELSE 'Not A Triangle' END) FROM TRIANGLES;
-
-
+--    Not A Triangle: The given values of A, B, and C don't form a triangle. Those 13,14,30 cannot form a triangle because the combined value of sides
+--    A and B is not larger than that of side C.
+SELECT (CASE WHEN (A+B)<=C THEN 'Not A Triangle'  WHEN (A=B AND A=C AND B=C) THEN 'Equilateral'  
+WHEN (A!=B AND A!=C AND B!=C) THEN 'Scalene' ELSE 'Isosceles' END) FROM TRIANGLES;
